@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Nuevo Medico</title>
+    </h:head>
+    <h:body>
+        <h:form id="formNuevoMedico">
+            <p:growl id="mensajes" showDetail="true" />
+
+            <p:panel header="Registrar Médico" style="width:450px; margin:auto;">                
+                <p:messages autoUpdate ="true" closable="true" />          
+
+                <p:panelGrid columns="2" columnClasses="etiqueta, campo" style="width:100%;">
+                    <h:outputLabel value="Nombre:" for="nombre" />
+                    <p:inputText id="nombre" value="#{medicoController.medico.nombre}" required="true" />
+
+                    <h:outputLabel value="Apellido:" for="apellido" />
+                    <p:inputText id="apellido" value="#{medicoController.medico.apellido}" required="true" />
+
+                    <h:outputLabel value="Contacto:" for="contacto" />
+                    <p:inputText id="contacto" value="#{medicoController.medico.contacto}" required="true" />
+
+                    <h:outputLabel value="Especialidad:" for="especialidad" />
+                    <p:inputText id="especialidad" value="#{medicoController.medico.especialidad}" required="true" />
+                </p:panelGrid>
+
+                <p:separator />
+
+                <p:commandButton value="Guardar Médico"
+                                 icon="pi pi-check"
+                                 actionListener="#{medicoController.guardar}"
+                                 update="formNuevoMedico"
+                                 styleClass="p-button-success"
+                                 />
+            </p:panel>
+
+        </h:form>
+    </h:body>
+</html>
+
