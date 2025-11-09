@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Nuevo Paciente</title>
+    </h:head>
+    <h:body>
+        <h:form id="formNuevoPaciente">
+            <p:growl id="mensajes" showDetail="true" />
+
+            <p:panel header="Registrar Paciente" style="width:450px; margin:auto;">                
+                <p:messages autoUpdate ="true" closable="true" />          
+
+                <p:panelGrid columns="2" columnClasses="etiqueta, campo" style="width:100%;">
+                    <h:outputLabel value="Nombre:" for="nombre" />
+                    <p:inputText id="nombre" value="#{pacienteController.paciente.nombre}" required="true" />
+
+                    <h:outputLabel value="Apellido:" for="apellido" />
+                    <p:inputText id="apellido" value="#{pacienteController.paciente.apellido}" required="true" />
+
+                    <h:outputLabel value="Contacto:" for="contacto" />
+                    <p:inputText id="contacto" value="#{pacienteController.paciente.contacto}" required="true" />
+
+                    <h:outputLabel value="Enfermedad:" for="enfermedad" />
+                    <p:inputText id="enfermedad" value="#{pacienteController.paciente.enfermedad}" required="true" />
+                    
+                    <h:outputLabel value="Tipo de Sangre:" for="tipoSangre" />
+                    <p:inputText id="tiposangre" value="#{pacienteController.paciente.tipoSangre}" required="true" />
+                </p:panelGrid>
+
+                <p:separator />
+
+                <p:commandButton value="Guardar Paciente"
+                                 icon="pi pi-check"
+                                 actionListener="#{pacienteController.guardar}"
+                                 update="formNuevoPaciente"                                 
+                                 styleClass="p-button-success"
+                                 />
+            </p:panel>
+
+        </h:form>
+    </h:body>
+</html>
+

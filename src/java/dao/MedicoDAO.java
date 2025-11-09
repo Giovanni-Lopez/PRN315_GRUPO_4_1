@@ -1,5 +1,10 @@
 package dao;
 
+/**
+ *
+ * @author AL23036
+ */
+
 import models.Medico;
 import conexion.Conexion;
 import java.sql.Connection;

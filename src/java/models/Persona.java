@@ -2,7 +2,7 @@ package models;
 
 /**
  *
- * @author Win11
+ * @author AL23036
  */
 public class Persona {
     

@@ -2,14 +2,13 @@ package models;
 
 /**
  *
- * @author Win11
+ * @author AL23036
  */
 public class Medico extends Persona{
     private int id;
     private String especialidad;
 
     // Getters y Setters
-
     public int getId() {
         return id;
     }

@@ -2,7 +2,7 @@ package controllers;
 
 /**
  *
- * @author Win11
+ * @author AL23036
  */
 
 import dao.MedicoDAO; 
@@ -16,13 +16,17 @@ import javax.faces.context.FacesContext;
 
 
 @Named("medicoController")
-@SessionScoped // o @ViewScoped
+@SessionScoped
 public class MedicoController implements Serializable {
     private Medico medico = new Medico();
     private List<Medico> listaMedicos;
     
-    public Medico getMedico() { return medico; }
-    public void setMedico(Medico medico) { this.medico = medico; }
+    public Medico getMedico() {
+        return medico; 
+    }
+    public void setMedico(Medico medico) {
+        this.medico = medico; 
+    }
     
     public List<Medico> getListaMedicos() {
         if (listaMedicos == null) {
