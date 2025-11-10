@@ -5,18 +5,19 @@ package models;
  * @author AL23036
  */
 public class Paciente extends Persona{
-     private int id;
+     private int idPaciente;
      private String enfermedad;
      private String tipoSangre;
      
     // Getters y Setters
-    public int getId() {
-        return id;
+    public int getIdPaciente() {
+        return idPaciente;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdPaciente(int idPaciente) {
+        this.idPaciente = idPaciente;
     }
+   
 
     public String getEnfermedad() {
         return enfermedad;

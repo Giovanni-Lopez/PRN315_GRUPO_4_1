@@ -10,8 +10,8 @@ import java.sql.SQLException;
 
 public class Conexion {
 
-    // Cambia el URL de conexión según tu servidor
-    private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=vacunacion;encrypt=false";
+    // URL de conexión al servidor
+    private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=vacuna1;encrypt=false";
     private static final String USER = "sa";  
     private static final String PASS = "123";
 
@@ -21,14 +21,14 @@ public class Conexion {
 
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             Connection conn = DriverManager.getConnection(URL, USER, PASS);
-            System.out.println("✅ Conexión exitosa a SQL Server");
+            System.out.println("Conexión exitosa a SQL Server");
             return conn;
         } catch (ClassNotFoundException e) {
-            System.out.println("❌ No se encontró el driver JDBC de SQL Server");
+            System.out.println("No se encontró el driver JDBC de SQL Server");
             e.printStackTrace();
             return null;
         } catch (SQLException e) {
-            System.out.println("❌ Error al conectar con SQL Server");
+            System.out.println("Error al conectar con SQL Server");
             e.printStackTrace();
             return null;
         }

@@ -6,19 +6,20 @@ package models;
  */
 public class Persona {
     
-    private int id;
+    private int idPersona;
     private String nombre;
     private String apellido;
     private String contacto;
 
     // Getters y Setters
-    public int getId() {
-        return id;
+
+    public int getIdPersona() {
+        return idPersona;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setIdPersona(int idPersona) {
+        this.idPersona = idPersona;
+    }   
 
     public String getNombre() {
         return nombre;

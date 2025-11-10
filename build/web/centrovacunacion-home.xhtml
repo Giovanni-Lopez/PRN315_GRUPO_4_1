@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Listado Centro de vacunacion</title>
+    </h:head>
+    <h:body>
+        
+        <h:form id="formCentroVacunacion">
+            <p:growl id="mensajes" showDetail="true" />
+
+            <p:panel header="Listado de Centro de Vacunacion" style="width:800px; margin:auto;">
+                <p:dataTable value="#{centroDeVacunacionController.listaCentroDeVacunacion}" var="v" 
+                             paginator="true" rows="5"
+                             emptyMessage="No hay Centros de vacunacion registrados."
+                             style="margin-top:10px;">
+
+                    <p:column headerText="ID">
+                        <h:outputText value="#{v.idCentroVacunacion}" />
+                    </p:column>
+
+                    <p:column headerText="Nombre Centro">
+                        <h:outputText value="#{v.nombreCentro}" />
+                    </p:column>
+                    
+                    <p:column headerText="Ubicacion Centro">
+                        <h:outputText value="#{v.ubicacionCentro}" />
+                    </p:column>
+
+                    <p:column headerText="Contacto Centro">
+                        <h:outputText value="#{v.contactoCentro}" />
+                    </p:column>                    
+                </p:dataTable>
+            </p:panel>
+        </h:form>
+        
+        <p:button value="Nuevo Centro"
+          icon="pi pi-list"
+          outcome="faces/centrovacunacion-new"
+          styleClass="p-button-secondary" />
+    </h:body>
+</html>
+

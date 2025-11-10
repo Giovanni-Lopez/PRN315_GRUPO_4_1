@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class PacienteDao {
             e.printStackTrace();
         }
     }
-    
+   
     // 🔸 OBTENER TODOS LOS PACIENTES
     public List<Paciente> listar() {
         List<Paciente> lista = new ArrayList<>();
@@ -44,6 +45,7 @@ public class PacienteDao {
          
             while (rs.next()) {
                 Paciente p = new Paciente();
+                p.setIdPaciente(rs.getInt("idPaciente"));
                 p.setNombre(rs.getString("nombre"));
                 p.setApellido(rs.getString("apellido"));
                 p.setContacto(rs.getString("contacto"));

@@ -44,6 +44,7 @@ public class MedicoDAO {
          
             while (rs.next()) {
                 Medico m = new Medico();
+                m.setIdMedico(rs.getInt("idMedico"));
                 m.setNombre(rs.getString("nombre"));
                 m.setApellido(rs.getString("apellido"));
                 m.setContacto(rs.getString("contacto"));
@@ -70,7 +71,7 @@ public class MedicoDAO {
             ps.setString(2, m.getApellido());
             ps.setString(3, m.getContacto());
             ps.setString(4, m.getEspecialidad());
-            ps.setInt(5, m.getId());
+            ps.setInt(5, m.getIdMedico());
             ps.executeUpdate();
 
         } catch (SQLException e) {
