@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Listado de Agenda</title>
+    </h:head>
+    <h:body>
+        <h:form id="formAgenda">
+            <p:growl id="mensajes" showDetail="true" />
+
+            <p:panel header="Lista de agenda" style="width:800px; margin:auto;">
+                <p:dataTable value="#{agendaController.listaAgenda}" var="a" 
+                             paginator="true" rows="5"
+                             emptyMessage="No hay agenda registrada."
+                             style="margin-top:10px;">
+
+                    <p:column headerText="ID">
+                        <h:outputText value="#{a.id_agenda}" />
+                    </p:column>
+
+
+                    <p:column headerText="Vacuna">
+                        <h:outputText value="#{a.id_vacuna}" />
+                    </p:column>
+                    
+                    <p:column headerText="Centro">
+                        <h:outputText value="#{a.id_centro}" />
+                    </p:column>
+
+                    <p:column headerText="Fecha">
+                        <h:outputText value="#{a.fecha}" />
+                    </p:column>
+                    
+                    <p:column headerText="Hora">
+                        <h:outputText value="#{a.fecha}" />
+                    </p:column>
+                </p:dataTable>
+            </p:panel>
+        </h:form>
+        
+        <p:button value="Nueva Agenda"
+          icon="pi pi-list"
+          outcome="faces/agenda-new"
+          styleClass="p-button-secondary" />
+    </h:body>
+</html>
+
